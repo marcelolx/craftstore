@@ -1,0 +1,29 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Nome:</strong>
+  <%= @obra.nome %>
+</p>
+
+<p>
+  <strong>Estilo obra:</strong>
+  <%= @obra.estilo_obra %>
+</p>
+
+<p>
+  <strong>Descricao:</strong>
+  <%= @obra.descricao %>
+</p>
+
+<p>
+  <strong>Preco:</strong>
+  <%= @obra.preco %>
+</p>
+
+<p>
+  <strong>Quantidade:</strong>
+  <%= @obra.quantidade %>
+</p>
+
+<%= link_to 'Edit', edit_obra_path(@obra) %> |
+<%= link_to 'Back', obras_path %>
