@@ -55,8 +55,8 @@ ActiveRecord::Schema.define(version: 2019_05_20_224428) do
     t.datetime "updated_at", null: false
     t.string "nome"
     t.string "sobrenome"
-    t.integer "cpf"
-    t.integer "telefone"
+    t.string "cpf"
+    t.string "telefone"
     t.string "rua"
     t.string "bairro"
     t.integer "numero_endereco"
