@@ -25,6 +25,7 @@ class ObrasController < ApplicationController
   # POST /obras.json
   def create
     @obra = Obra.new(obra_params)
+    @obra.usuario_id = current_usuario.id
 
     respond_to do |format|
       if @obra.save

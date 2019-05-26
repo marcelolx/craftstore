@@ -46,6 +46,7 @@ ActiveRecord::Schema.define(version: 2019_05_26_202538) do
   end
 
   create_table "obras", force: :cascade do |t|
+    t.integer "usuario_id"
     t.string "nome"
     t.string "estilo_obra"
     t.text "descricao"
