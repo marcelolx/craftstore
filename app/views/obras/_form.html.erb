@@ -36,6 +36,13 @@
     <%= form.number_field :quantidade %>
   </div>
 
+  <%= form.fields_for :fotos_obra do |f| %>
+    <div class="field">
+      <%= f.label :foto %><br>
+      <%= f.file_field :foto, :multiple => true, name: "fotos_obra[foto][]" %>
+    </div>
+  <% end %>
+
   <div class="actions">
     <%= form.submit %>
   </div>

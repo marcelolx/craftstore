@@ -15,6 +15,7 @@ class ObrasController < ApplicationController
   # GET /obras/new
   def new
     @obra = Obra.new
+    @fotos_obra = @obra.fotos_obra.build
   end
 
   # GET /obras/1/edit
@@ -29,6 +30,11 @@ class ObrasController < ApplicationController
 
     respond_to do |format|
       if @obra.save
+        params[:fotos_obra]['foto'].each do |f|
+          @fotos_obra = @obra.fotos_obra.create!(:foto => f,
+            :obra_id => @obra.id)
+        end
+
         format.html { redirect_to @obra, notice: 'Obra was successfully created.' }
         format.json { render :show, status: :created, location: @obra }
       else
@@ -70,6 +76,7 @@ class ObrasController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def obra_params
-      params.require(:obra).permit(:nome, :estilo_obra, :descricao, :preco, :quantidade)
+      params.require(:obra).permit(:nome, :estilo_obra, :descricao, :preco, :quantidade, 
+        fotos_obra_attributes: [:id, :obra_id, :foto])
     end
 end
