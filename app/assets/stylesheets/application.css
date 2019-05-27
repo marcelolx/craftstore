@@ -13,6 +13,11 @@
  *= require_tree .
  *= require_self
  */
+ @import url('https://fonts.googleapis.com/css?family=Roboto&display=swap');
+ 
+:root{
+    font-family: 'Roboto'
+}
 
 .footer {
     position: fixed;
