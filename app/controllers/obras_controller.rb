@@ -4,7 +4,7 @@ class ObrasController < ApplicationController
   # GET /obras
   # GET /obras.json
   def index
-    @obras = Obra.all
+    @obras = Obra.where("usuario_id = ?", current_usuario.id)
   end
 
   # GET /obras/1
