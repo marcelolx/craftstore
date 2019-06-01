@@ -3,7 +3,8 @@ Rails.application.routes.draw do
   root 'home#index'
   devise_for :usuarios, controllers: {
     sessions: 'usuarios/sessions',
-    registrations: 'usuarios/registrations'
+    registrations: 'usuarios/registrations',
+    passwords: 'usuarios/passwords'
   }
   #devise_for :users
   #mount RailsAdmin::Engine => '/admin', as: 'rails_admin'  
