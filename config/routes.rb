@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  resources :fotos_obras
+  resources :obras
   get 'home/index'
   root 'home#index'
   devise_for :usuarios, controllers: {

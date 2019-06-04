@@ -1,0 +1,23 @@
+<p id="notice"><%= notice %></p>
+
+<% if @fotos_obra.exists? %>  
+  <div class="row">
+    <% @fotos_obra.each do |foto| %>
+
+    <div class="col-md-3 col-xs-12 col-sm-6 fotos-column">      
+        <div class="photo">
+          <a href="<%= foto.foto_url() %>" class="photo-hover img-responsive" data-lightbox="my-fotos">
+            <div class="mask"></div>
+          </a>
+          <div class="photo-img">
+            <%= image_tag foto.foto_url() unless foto.foto.blank? %>
+          </div>
+        </div>      
+    </div>
+    <% end %>
+  </div>
+<% end %>
+
+
+<%= link_to 'Edit', edit_fotos_obra_path(@fotos_obra) %> |
+<%= link_to 'Back', fotos_obras_path %>

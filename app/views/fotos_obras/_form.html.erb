@@ -1,0 +1,27 @@
+<%= form_with(model: fotos_obra, local: true) do |form| %>
+  <% if fotos_obra.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(fotos_obra.errors.count, "error") %> prohibited this fotos_obra from being saved:</h2>
+
+      <ul>
+      <% fotos_obra.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= form.label :obra_id %>
+    <%= form.number_field :obra_id %>
+  </div>
+
+  <div class="field">
+    <%= form.label :foto %>
+    <%= form.text_field :foto %>
+  </div>
+
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+<% end %>

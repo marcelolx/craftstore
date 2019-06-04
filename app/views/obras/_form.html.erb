@@ -1,0 +1,49 @@
+<%= form_with(model: obra, local: true) do |form| %>
+  <% if obra.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(obra.errors.count, "error") %> prohibited this obra from being saved:</h2>
+
+      <ul>
+      <% obra.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= form.label :nome %>
+    <%= form.text_field :nome %>
+  </div>
+
+  <div class="field">
+    <%= form.label :estilo_obra %>
+    <%= form.text_field :estilo_obra %>
+  </div>
+
+  <div class="field">
+    <%= form.label :descricao %>
+    <%= form.text_area :descricao %>
+  </div>
+
+  <div class="field">
+    <%= form.label :preco %>
+    <%= form.text_field :preco %>
+  </div>
+
+  <div class="field">
+    <%= form.label :quantidade %>
+    <%= form.number_field :quantidade %>
+  </div>
+
+  <%= form.fields_for :fotos_obra do |f| %>
+    <div class="field">
+      <%= f.label :foto %><br>
+      <%= f.file_field :foto, :multiple => true, name: "fotos_obra[foto][]" %>
+    </div>
+  <% end %>
+
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+<% end %>
