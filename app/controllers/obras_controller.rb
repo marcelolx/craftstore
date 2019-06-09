@@ -35,7 +35,7 @@ class ObrasController < ApplicationController
             :obra_id => @obra.id)
         end
 
-        format.html { redirect_to @obra, notice: 'Obra was successfully created.' }
+        format.html { redirect_to @obra, notice: 'Obra criada com sucesso' }
         format.json { render :show, status: :created, location: @obra }
       else
         format.html { render :new }
@@ -49,7 +49,7 @@ class ObrasController < ApplicationController
   def update
     respond_to do |format|
       if @obra.update(obra_params)
-        format.html { redirect_to @obra, notice: 'Obra was successfully updated.' }
+        format.html { redirect_to @obra, notice: 'Obra atualizada com êxito.' }
         format.json { render :show, status: :ok, location: @obra }
       else
         format.html { render :edit }
@@ -63,7 +63,7 @@ class ObrasController < ApplicationController
   def destroy
     @obra.destroy
     respond_to do |format|
-      format.html { redirect_to obras_url, notice: 'Obra was successfully destroyed.' }
+      format.html { redirect_to obras_url, notice: 'Obra foi excluida com sucesso.' }
       format.json { head :no_content }
     end
   end

@@ -24,7 +24,7 @@
         <td><%= obra.quantidade %></td>
         <td><%= link_to 'Mostrar', obra %></td>
         <td><%= link_to 'Editar', edit_obra_path(obra) %></td>
-        <td><%= link_to 'Excluir', obra, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td><%= link_to 'Excluir', obra, method: :delete, data: { confirm: 'Tem certeza?' } %></td>
       </tr>
     <% end %>
   </tbody>
@@ -32,4 +32,4 @@
 
 <br>
 
-<%= link_to 'Nova obra', new_obra_path %>
+<%= link_to 'Nova obra', new_obra_path , class: "btn btn-primary" %>
