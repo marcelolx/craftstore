@@ -7,8 +7,8 @@
     <tr>
       <th>Nome</th>
       <th>Estilo obra</th>
-      <th>Descricao</th>
-      <th>Preco</th>
+      <th>Descrição</th>
+      <th>Preço</th>
       <th>Quantidade</th>
       <th colspan="3"></th>
     </tr>
@@ -22,9 +22,9 @@
         <td><%= obra.descricao %></td>
         <td><%= obra.preco %></td>
         <td><%= obra.quantidade %></td>
-        <td><%= link_to 'Show', obra %></td>
-        <td><%= link_to 'Edit', edit_obra_path(obra) %></td>
-        <td><%= link_to 'Destroy', obra, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td><%= link_to 'Mostrar', obra %></td>
+        <td><%= link_to 'Editar', edit_obra_path(obra) %></td>
+        <td><%= link_to 'Excluir', obra, method: :delete, data: { confirm: 'Are you sure?' } %></td>
       </tr>
     <% end %>
   </tbody>
@@ -32,4 +32,4 @@
 
 <br>
 
-<%= link_to 'New Obra', new_obra_path %>
+<%= link_to 'Nova obra', new_obra_path %>
