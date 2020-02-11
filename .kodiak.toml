@@ -1,0 +1,12 @@
+# https://github.com/chdsbd/kodiak
+version = 1	version = 1
+
+[approve]
+auto_approve_usernames = ["dependabot-preview[bot]"]
+
+[merge]
+method = "squash"
+delete_branch_on_merge = true
+
+[merge.message]
+body = "pull_request_body"
