@@ -1,5 +1,5 @@
 # https://github.com/chdsbd/kodiak
-version = 1	version = 1
+version = 1
 
 [approve]
 auto_approve_usernames = ["dependabot-preview[bot]"]
